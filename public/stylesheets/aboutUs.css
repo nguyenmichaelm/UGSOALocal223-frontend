@@ -1,0 +1,32 @@
+.president-word {
+  background-color: #f8dd8c;
+  border-radius: 30px;
+  margin-bottom: 10%;
+}
+
+.why-support {
+  color:#413146;
+}
+
+.reasons {
+  margin: 10px 5%;
+  border-radius: 30px;
+}
+
+.reasons,.why-support>header {
+  background-color: rgba(89, 72, 94, 0.7);
+  color: black;
+}
+
+.prayer {
+  background-color: rgba(247, 220, 140, 0.8);
+  color: #413146;
+}
+
+hr {
+  background-color: transparent;
+  opacity: 1;
+  border-bottom: 12px dotted rgba(248, 221, 140, .8);
+  width: 25%;
+  margin: 10% auto 5%;
+}

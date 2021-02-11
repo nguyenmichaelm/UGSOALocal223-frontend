@@ -1,0 +1,40 @@
+nav,a,a.dropdown-item,ul.dropdown-menu {
+  background-color:#413146;
+  color:#f8dd8c;
+  border: 0;
+}
+
+ul.dropdown-menu {
+  border: black solid 2px;
+  box-shadow: 0px 12px 20px 1px #4a3670;
+}
+
+button {
+  color: transparent;
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(248, 221, 140, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+a.active,a.dropdown-item.active {
+  text-decoration: underline;
+} 
+
+a:hover,a.disabled,a.dropdown-item:hover,a.active,a.dropdown-item.active {
+  color:#f8dd8c;
+  background-color:#413146;
+  font-weight: bold;
+}
+
+a.disabled:hover {
+  cursor: default;
+}
+
+span.icon {
+  float: left;
+  background-image: url("../images/ugsoa-logo.png");
+  background-size: cover;
+  height: 2rem;
+  width: 2rem;
+}  
