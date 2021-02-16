@@ -23,7 +23,7 @@
   color: #413146;
 }
 
-hr {
+.spacer {
   background-color: transparent;
   opacity: 1;
   border-bottom: 12px dotted rgba(248, 221, 140, .8);

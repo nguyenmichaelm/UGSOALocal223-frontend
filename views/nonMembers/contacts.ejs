@@ -2,5 +2,28 @@
   <% block('page').append(' contacts') %>
 
     <body>
-      contacts
+      <div class="container">
+        <% for (let i=0; i < boardMembers.length; i = i + 2) { %>
+          <div class="row">
+            <% for (let j = i, k = 0; j < boardMembers.length && k < 2; j++, k++) { %>
+              <div class="col-lg-6">
+                <div class="card-body">
+                  <h5 class="card-title">
+                    <%= boardMembers[j].name %>
+                  </h5>
+                  <h6 class="card-subtitle mb-2 text-muted">
+                    <%= boardMembers[j].title %>
+                  </h6>
+                  <p class="card-text">
+                    <%= boardMembers[j].email %>
+                  </p>
+                  <p class="card-text">
+                    <%= boardMembers[j].phone %>
+                  </p>
+                </div>
+              </div>
+              <% } %>
+          </div>
+          <% } %>
+      </div>
     </body>
