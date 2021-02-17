@@ -1,23 +1,36 @@
 <%- layout('layouts/boilerplate') %>
   <% block('page').append(' contacts') %>
+    <link rel="stylesheet" href="../stylesheets/contacts.css">
 
-    <body>
-      <div class="container">
-        <% for (let i=0; i < boardMembers.length; i = i + 2) { %>
+
+    <section class="container">
+      <aside class="biege-back py-3 px-5 text-center mb-5">
+        <p class="purple-text">
+          For questions, comments or concerns please contact a union representative directly with the information
+          provided. Or
+          fill out and submit the form at the bottom of the page.
+        </p>
+      </aside>
+      <article class="contacts">
+        <h1 class="text-center">Officers & Stewards</h1>
+
+                    <h2 class="text-center fs-3 mt-3 mb-0">Board Members</h2>
+        <!-- take out when database is included -->
+        <% for (let i=0; i < boardMembers.length; i=i + 2) { %>
           <div class="row">
-            <% for (let j = i, k = 0; j < boardMembers.length && k < 2; j++, k++) { %>
+            <% for (let j=i, k=0; j < boardMembers.length && k < 2; j++, k++) { %>
               <div class="col-lg-6">
                 <div class="card-body">
-                  <h5 class="card-title">
-                    <%= boardMembers[j].name %>
-                  </h5>
-                  <h6 class="card-subtitle mb-2 text-muted">
+                  <h4 class="card-title">
                     <%= boardMembers[j].title %>
-                  </h6>
-                  <p class="card-text">
+                  </h4>
+                  <p class="purple-text">
+                    <%= boardMembers[j].name %>
+                  </p>
+                  <p class="purple-text">
                     <%= boardMembers[j].email %>
                   </p>
-                  <p class="card-text">
+                  <p class="purple-text">
                     <%= boardMembers[j].phone %>
                   </p>
                 </div>
@@ -25,5 +38,65 @@
               <% } %>
           </div>
           <% } %>
-      </div>
-    </body>
+
+            <h2 class="text-center fs-3 mt-3 mb-0">Trustees</h2>
+            <!-- take out when database is included -->
+            <% for (let i=0; i < trustees.length; i=i + 2) { %>
+              <div class="row">
+                <% for (let j=i, k=0; j < trustees.length && k < 2; j++, k++) { %>
+                  <div class="col-lg-6">
+                    <div class="card-body">
+                      <h4 class="card-title">
+                        <%= trustees[j].title %>
+                      </h4>
+                      <p class="purple-text">
+                        <%=trustees[j].name %>
+                      </p>
+                      <p class="purple-text">
+                        <%= trustees[j].email %>
+                      </p>
+                      <p class="purple-text">
+                        <%= trustees[j].phone %>
+                      </p>
+                    </div>
+                  </div>
+                  <% } %>
+              </div>
+              <% } %>
+      </article>
+
+      <article class="biege-back">
+        <div class="container py-4 px-5">
+        <form class="form-style">
+          <fieldset>
+            <legend class="text-light fs-1 text-center">Contact Us</legend>
+            <div class="row">
+              <div class="col-lg-6 mb-3">
+                <input type="text" class="form-control" id="firstName" name="firstName" placeholder="First Name"
+                  aria-describedby="firstName" required>
+              </div>
+              <div class="col-lg-6 mb-3">
+                <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Last Name"
+                  aria-describedby="lastName" required>
+              </div>
+            </div>
+            <div class="row">
+            <div class="col-lg-6 mb-3">
+              <input type="tel" class="form-control" id="phoneNumber" name="phoneNumber" placeholder="Contact Number"
+                aria-describedby="phoneNumber">
+            </div>
+            <div class="col-lg-6 mb-3">
+              <input type="email" class="form-control" id="email" name="email" placeholder="Email"
+                aria-describedby="email" required>
+            </div>
+            </div>
+            <div class="form-floating mb-3">
+              <textarea class="form-control" id="textArea" name="comments" required></textarea>
+              <label for="textArea text-secondary">Questions, Comments or Concerns:</label>
+            </div>
+            <button type="submit" class="btn form-button mb-3">Submit</button>
+          </fieldset>
+        </form>
+        </div>
+      </article>
+    </section>

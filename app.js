@@ -1,6 +1,6 @@
 const express = require('express');
 const engine = require('ejs-mate');
-const boardMembers = require('./public/javascripts/boardMembers');
+const { boardMembers, trustees } = require('./public/javascripts/boardMembers');
 const app = express();
 
 // use ejs-locals for all ejs templates:
@@ -20,7 +20,12 @@ app.get('/aboutUs', function (req, res, next) {
 });
 
 app.get('/contacts', function (req, res, next) {
-  res.render('nonMembers/contacts', { title: 'Contact UGSOALocal223', boardMembers });
+  res.render('nonMembers/contacts',
+    {
+      title: 'Contact UGSOALocal223',
+      boardMembers,
+      trustees
+    });
 });
 
 app.get('/links', function (req, res, next) {
